@@ -36,7 +36,9 @@ def main():
 	blockSnake.fill(Color(white))
 
 	blockFood = Surface ((20,20))
-	blockFood.fill (Color("#ff55ff"))
+	foodColor = "#ff55ff"
+	blockFood.fill (Color(foodColor))
+	#color maybe not a variable but const string like that "#ff55ff"
 	x = random.randrange(0,400,20)
 	y = random.randrange(0,400,20)
 	xfood = random.randrange(0,400,20)
@@ -53,7 +55,7 @@ def main():
 		timer.tick(20)
 		for event in pygame.event.get(): # Обрабатываем события
 			if event.type == QUIT:
-				raise SystemExit, "QUIT"
+				raise SystemExit("QUIT")
 
 
 
@@ -126,10 +128,13 @@ def main():
 		# block_height = block_height + 20
 		# blockSnake = Surface ((block_width, block_height))
 		# blockSnake.fill(Color("#ffffff"))
+			colors = ["#CD5C5C", "#E9967A", "#DC143C", "#FF0000", "#B22222", "#8B0000", "#ADFF2F", "#32CD32", "#98FB98", "#00FA9A", "#9ACD32", "#FF69B4", "#FF1493", "#C71585", "#DB7093", "#FF4500", "#FFD700", "#20B2AA", "#008B8B", "#00FFFF", "#4682B4", "#8A2BE2", "#8B4513", "#0000FF"]
+			
 			xfood = random.randrange(0,400,20)
 			yfood = random.randrange(0,400,20)
-
-
+			foodColorNum = random.randrange(0,len(colors),1)
+			blockFood.fill (Color(colors[foodColorNum]))
+			
 		screen.blit(bg, (0,0)) # Каждую итерацию необходимо всё перерисовывать
 
 
