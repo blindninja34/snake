@@ -23,6 +23,16 @@ white = "#ffffff"
 
 def main():
 	pygame.init() # Инициация PyGame, обязательная строчка
+	pygame.mixer.init() # init of music mixer
+	
+	pygame.mixer.music.load("mainost.mp3") #load music file from default folder
+	pygame.mixer.music.set_volume(0.30) #volume of sound
+	pygame.mixer.music.play()  #start to play NB: try to use it with IF-cycle
+ 
+#	splat = pygame.mixer.Sound("splat.wav")
+#	splat.set_volume(0.50)
+#	splat.play()
+
 	screen = pygame.display.set_mode(DISPLAY) # Создаем окошко
 	pygame.display.set_caption("snake") # Пишем в шапку
 	bg = Surface((WIN_WIDTH,WIN_HEIGHT)) # Создание видимой поверхности
